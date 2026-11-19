@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DrawAudit.App</RootNamespace>
+    <AssemblyName>DrawAudit</AssemblyName>
+    <Product>Draw Audit</Product>
+    <!-- Always set, so Debug and Release builds share one restore (avoids NETSDK1047 on publish). -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <!-- dotnet publish -c Release  ->  one self-contained DrawAudit.exe -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <!-- Do not copy the referenced libraries' .pdb files next to the published exe. -->
+    <AllowedReferenceRelatedFileExtensions>none</AllowedReferenceRelatedFileExtensions>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pipeline\Pipeline.csproj" />
+  </ItemGroup>
+
+</Project>

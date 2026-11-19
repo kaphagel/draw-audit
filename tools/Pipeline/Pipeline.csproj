@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DrawAudit.Pipeline</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="*" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="*" />
+    <ProjectReference Include="..\ExtractionCore\ExtractionCore.csproj" />
+    <ProjectReference Include="..\HierarchyCore\HierarchyCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Built into the application: the default colours (an appsettings.json next to the executable
+         overrides them) and the summary template (fixed; replace the file and rebuild to update). -->
+    <EmbeddedResource Include="appsettings.json" LogicalName="DrawAudit.appsettings.json" />
+    <EmbeddedResource Include="Resources\SummaryTemplate.xlsx" LogicalName="DrawAudit.SummaryTemplate.xlsx" />
+  </ItemGroup>
+
+</Project>

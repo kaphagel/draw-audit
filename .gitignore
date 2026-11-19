@@ -1,0 +1,19 @@
+# Project documents (drawings, delivery lists, inventory) - never commit
+source/
+
+# Generated output
+out*.xlsx
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+publish/
+
+# .NET build output
+bin/
+obj/
+
+# Editors / OS
+.vs/
+*.user
+~$*
+Thumbs.db
